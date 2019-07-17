@@ -13,11 +13,11 @@ tags:
     		})
  console.log(result)  // 去重后的数组
  // ES5方法
- function unique(arr){
- 	var newArr = [arr[0]];
-   for (var i = 1; i < arr.length; i++) {
-   	if(newArr.indexOf(arr[i]) == -1) {
-    	newArr.push(arr[i])
+ function unique(arrArray){
+ 	var newArr = [arrArray[0]];
+   for (var i = 1; i < arrArray.length; i++) {
+   	if(newArr.indexOf(arrArray[i]) == -1) {
+    	newArr.push(arrArray[i])
     }
    }
  }
