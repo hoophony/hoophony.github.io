@@ -384,10 +384,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>宝塔面板拥有极速方便的一键配置与管理。免除繁琐的命令行操作，通过 Web 面板一键即可操作实现。可选择安装 lamp 或者 lnmp 环境、可创建及管理网站、可创建及管理数据库、可创建及管理 FTP。</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="安装远程工具-putty-exe"><a href="#安装远程工具-putty-exe" class="headerlink" title="安装远程工具 putty.exe"></a>安装远程工具 putty.exe</h3><h3 id="购买服务器"><a href="#购买服务器" class="headerlink" title="购买服务器"></a>购买服务器</h3><p>这里我推荐阿里云服务器，初学者有免费的 1 个月试用期，注册登录就可以免费使用，前提是你的芝麻分达到要求，记得支付宝认证哦</p>
-<h3 id="利用远程工具-putty-连接"><a href="#利用远程工具-putty-连接" class="headerlink" title="利用远程工具 putty 连接"></a>利用远程工具 putty 连接</h3><p>打开远程工具，输入 ip，打开对话框，进行身份验证进入。这个账号密码，你可以在阿里云控制台重置你的实例密码。账号默认为 root</p>
+<h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h3><h4 id="安装远程工具-putty-exe"><a href="#安装远程工具-putty-exe" class="headerlink" title="安装远程工具 putty.exe"></a>安装远程工具 putty.exe</h4><h4 id="购买服务器"><a href="#购买服务器" class="headerlink" title="购买服务器"></a>购买服务器</h4><p>这里我推荐阿里云服务器，初学者有免费的 1 个月试用期，注册登录就可以免费使用，前提是你的芝麻分达到要求，记得支付宝认证哦</p>
+<h4 id="利用远程工具-putty-连接"><a href="#利用远程工具-putty-连接" class="headerlink" title="利用远程工具 putty 连接"></a>利用远程工具 putty 连接</h4><p>打开远程工具，输入 ip，打开对话框，进行身份验证进入。这个账号密码，你可以在阿里云控制台重置你的实例密码。账号默认为 root</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">login as: root</span><br><span class="line">password: ******</span><br><span class="line">Welcome to Alibaba Cloud Elastic Compute Service</span><br></pre></td></tr></table></figure>
-<h3 id="根据服务器类型安装宝塔面板-https-www-bt-cn"><a href="#根据服务器类型安装宝塔面板-https-www-bt-cn" class="headerlink" title="根据服务器类型安装宝塔面板(https://www.bt.cn/)"></a>根据服务器类型安装宝塔面板(<a href="https://www.bt.cn/" target="_blank" rel="noopener">https://www.bt.cn/</a>)</h3><p>1、Centos 安装命令：</p>
+<h4 id="根据服务器类型安装宝塔面板-https-www-bt-cn"><a href="#根据服务器类型安装宝塔面板-https-www-bt-cn" class="headerlink" title="根据服务器类型安装宝塔面板(https://www.bt.cn/)"></a>根据服务器类型安装宝塔面板(<a href="https://www.bt.cn/" target="_blank" rel="noopener">https://www.bt.cn/</a>)</h4><p>1、Centos 安装命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh</span><br></pre></td></tr></table></figure>
 <p>2、Ubuntu/Deepin 安装命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh</span><br></pre></td></tr></table></figure>
@@ -397,10 +397,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; bash install.sh</span><br></pre></td></tr></table></figure>
 <p>安装成功后有宝塔面板的访问地址还有账号和密码</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Bt-Panel: http://******:8888/9139c488</span><br><span class="line">username: 123456</span><br><span class="line">password: ******</span><br></pre></td></tr></table></figure>
-<h3 id="用浏览器访问宝塔面板"><a href="#用浏览器访问宝塔面板" class="headerlink" title="用浏览器访问宝塔面板"></a>用浏览器访问宝塔面板</h3><p>在阿里云控制台必须配置好安全组，否则不能正常访问<br>所需端口（配置安全组）：ftp(21),ssh(22),http(80),https(443),mysql(3306),phpAdmin(888),宝塔面板(8888)。<br>最后记得加入安全组啦</p>
-<h3 id="成功访问宝塔面板后安装-LNMP"><a href="#成功访问宝塔面板后安装-LNMP" class="headerlink" title="成功访问宝塔面板后安装 LNMP"></a>成功访问宝塔面板后安装 LNMP</h3><p>可以用他的推荐版本，或者自行选择安装版本，之后可以点到软件管理那里，等待安装的软件全部安装完成，就可以添加网站啦</p>
-<h3 id="创建站点"><a href="#创建站点" class="headerlink" title="创建站点"></a>创建站点</h3><p>没有域名填 ip。顺便创个 ftp 方便以后管理。然后建数据库啊。创建成功就会显示 ftp 账号密码还有数据库的账号密码啦</p>
-<h3 id="上传后端代码并解压"><a href="#上传后端代码并解压" class="headerlink" title="上传后端代码并解压"></a>上传后端代码并解压</h3><h3 id="浏览器打开-ip，根据提示安装后台"><a href="#浏览器打开-ip，根据提示安装后台" class="headerlink" title="浏览器打开 ip，根据提示安装后台"></a>浏览器打开 ip，根据提示安装后台</h3><p>数据库那些信息都是在宝塔里面，你添加的站点那里，可以复制。<br>以上所有步骤就可以部署一个站点啦。<br>有出错的地方还望各位指出，我们共同学习。</p>
+<h4 id="用浏览器访问宝塔面板"><a href="#用浏览器访问宝塔面板" class="headerlink" title="用浏览器访问宝塔面板"></a>用浏览器访问宝塔面板</h4><p>在阿里云控制台必须配置好安全组，否则不能正常访问<br>所需端口（配置安全组）：ftp(21),ssh(22),http(80),https(443),mysql(3306),phpAdmin(888),宝塔面板(8888)。<br>最后记得加入安全组啦</p>
+<h4 id="成功访问宝塔面板后安装-LNMP"><a href="#成功访问宝塔面板后安装-LNMP" class="headerlink" title="成功访问宝塔面板后安装 LNMP"></a>成功访问宝塔面板后安装 LNMP</h4><p>可以用他的推荐版本，或者自行选择安装版本，之后可以点到软件管理那里，等待安装的软件全部安装完成，就可以添加网站啦</p>
+<h4 id="创建站点"><a href="#创建站点" class="headerlink" title="创建站点"></a>创建站点</h4><p>没有域名填 ip。顺便创个 ftp 方便以后管理。然后建数据库啊。创建成功就会显示 ftp 账号密码还有数据库的账号密码啦</p>
+<h4 id="上传后端代码并解压"><a href="#上传后端代码并解压" class="headerlink" title="上传后端代码并解压"></a>上传后端代码并解压</h4><h4 id="浏览器打开-ip，根据提示安装后台"><a href="#浏览器打开-ip，根据提示安装后台" class="headerlink" title="浏览器打开 ip，根据提示安装后台"></a>浏览器打开 ip，根据提示安装后台</h4><p>数据库那些信息都是在宝塔里面，你添加的站点那里，可以复制。<br>以上所有步骤就可以部署一个站点啦。<br>有出错的地方还望各位指出，我们共同学习。</p>
 
       
 
