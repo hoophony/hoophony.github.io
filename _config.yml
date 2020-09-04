@@ -80,4 +80,4 @@ theme: yilia
 deploy:
   type: git
   repo: https://github.com/hoophony/hoophony.github.io
-  branch: hexo
+  branch: master
