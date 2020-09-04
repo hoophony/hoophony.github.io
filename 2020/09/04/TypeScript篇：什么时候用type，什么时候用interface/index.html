@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Hoophony的博客">
 <meta property="og:description" content="类型别名(type)会给一个类型起个新名字。 类型别名有时和接口很像，但是可以作用于原始值，联合类型，元组以及其它任何你需要手写的类型。  接口(interface)接口的作用就是为这些类型命名和为你的代码或第三方代码定义契约。这个怎么理解呢？就是限制我们所定义对象的属性类型。   以下来说明两者之间的不同点： type不同点： type用于原始值 1type Numtype = number">
 <meta property="og:locale" content="UTF-8">
-<meta property="og:updated_time" content="2020-09-04T07:37:28.045Z">
+<meta property="og:updated_time" content="2020-09-04T07:48:27.187Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TypeScript篇：什么时候用type，什么时候用interface">
 <meta name="twitter:description" content="类型别名(type)会给一个类型起个新名字。 类型别名有时和接口很像，但是可以作用于原始值，联合类型，元组以及其它任何你需要手写的类型。  接口(interface)接口的作用就是为这些类型命名和为你的代码或第三方代码定义契约。这个怎么理解呢？就是限制我们所定义对象的属性类型。   以下来说明两者之间的不同点： type不同点： type用于原始值 1type Numtype = number">
@@ -167,7 +167,7 @@
 
         
         <a href="/2020/09/04/TypeScript篇：什么时候用type，什么时候用interface/" class="archive-article-date">
-  	<time datetime="2020-09-04T05:41:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-04</time>
+  	<time datetime="2020-09-04T05:41:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-04</time>
 </a>
         
       </header>
@@ -190,11 +190,11 @@
 </li>
 </ul>
 <hr>
-<h6 id="interface不同点："><a href="#interface不同点：" class="headerlink" title="interface不同点："></a>interface不同点：</h6><p>定义个接口<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  interface Interface &#123;</span><br><span class="line">      num: number</span><br><span class="line">  &#125;</span><br><span class="line">  ```  </span><br><span class="line"></span><br><span class="line">+ extends(类、接口）</span><br></pre></td></tr></table></figure></p>
+<h6 id="interface不同点："><a href="#interface不同点：" class="headerlink" title="interface不同点："></a>interface不同点：</h6><p>定义个接口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  interface Interface &#123;</span><br><span class="line">      num: number</span><br><span class="line">  &#125;</span><br><span class="line"> ``` </span><br><span class="line">+ extends(类、接口）</span><br></pre></td></tr></table></figure></p>
 <p>class myClass extends Interface {<br>    str: string<br>}<br>interface myInterface extends Interface {<br>    str: string<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ implements (类）</span><br></pre></td></tr></table></figure></p>
-<p>class myClass implements Interface {<br>    str: string<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">两者的相同点：都可以为变量设置限制类型。</span><br></pre></td></tr></table></figure></p>
+<p>class myClass implements Interface {<br>    str: string<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">两者的相同点：都可以为变量设置限制类型。</span><br></pre></td></tr></table></figure></p>
 <p>  type Alias = {<br>    num: number<br>  }<br>  interface Interface {<br>    num: number<br>  }<br>  let _alias: Alias = {<br>    num: 123<br>  }<br>  let _interface: Interface = {<br>    num: 321<br>  }</p>
-<h2 id><a href="#" class="headerlink" title="  `"></a>  <code>`</code></h2><p>总结：</p>
+<h2 id><a href="#" class="headerlink" title="`"></a><code>`</code></h2><p>总结：</p>
 <ul>
 <li>类型别名：无法使用接口，需要用到联合类型或者元组类型</li>
 <li>接口：当你要定义的类型用于扩展。即要使用extends、implements修饰</li>
