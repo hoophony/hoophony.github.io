@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>微信小程序与h5、原生app的区别 | Hoophony的博客</title>
+  <title>TypeScript篇：三种绕过多余属性检测的方式 | Hoophony的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="微信小程序与h5的区别1、运行环境不同h5 的运行环境是浏览器，包括 WebView，而微信小程序的运行并非完整的浏览器，是微信开发开发团队基于浏览器内核完全重构的一个内置解析器，针对小程序专门做了优化。 2、开发成本不同h5要考虑浏览器的兼容性问题，而且UI库的版本迭代、版本升级也是一个很大的成本。而微信小程序只在微信里运行，不用考虑浏览器的兼容性问题，框架也有自家的weui库。 3、系统权限不">
+  <meta name="description" content="TypeScript的核心原则之一是对值所具有的结构进行类型检查。  接口（interface）可以限定我们所定义对象的结构。 就是因为这种限定，让我们所写的接口变得似乎有点不智能。为了更能让我们所定义的接口灵活自如，下面我将会以一个例子来讲述灵活地跳过类型检查器检测又能写出一个合格的接口。  123456789// 定义接口interface NameInfo &amp;#123;    firstN">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信小程序与h5、原生app的区别">
-<meta property="og:url" content="http://yoursite.com/2019/07/17/微信小程序与h5、原生app的区别/index.html">
+<meta property="og:title" content="TypeScript篇：三种绕过多余属性检测的方式">
+<meta property="og:url" content="http://yoursite.com/2020/09/04/TypeScript篇：三种绕过多余属性检测的方式/index.html">
 <meta property="og:site_name" content="Hoophony的博客">
-<meta property="og:description" content="微信小程序与h5的区别1、运行环境不同h5 的运行环境是浏览器，包括 WebView，而微信小程序的运行并非完整的浏览器，是微信开发开发团队基于浏览器内核完全重构的一个内置解析器，针对小程序专门做了优化。 2、开发成本不同h5要考虑浏览器的兼容性问题，而且UI库的版本迭代、版本升级也是一个很大的成本。而微信小程序只在微信里运行，不用考虑浏览器的兼容性问题，框架也有自家的weui库。 3、系统权限不">
+<meta property="og:description" content="TypeScript的核心原则之一是对值所具有的结构进行类型检查。  接口（interface）可以限定我们所定义对象的结构。 就是因为这种限定，让我们所写的接口变得似乎有点不智能。为了更能让我们所定义的接口灵活自如，下面我将会以一个例子来讲述灵活地跳过类型检查器检测又能写出一个合格的接口。  123456789// 定义接口interface NameInfo &amp;#123;    firstN">
 <meta property="og:locale" content="UTF-8">
-<meta property="og:updated_time" content="2019-07-17T13:49:25.718Z">
+<meta property="og:updated_time" content="2020-09-04T02:05:39.735Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信小程序与h5、原生app的区别">
-<meta name="twitter:description" content="微信小程序与h5的区别1、运行环境不同h5 的运行环境是浏览器，包括 WebView，而微信小程序的运行并非完整的浏览器，是微信开发开发团队基于浏览器内核完全重构的一个内置解析器，针对小程序专门做了优化。 2、开发成本不同h5要考虑浏览器的兼容性问题，而且UI库的版本迭代、版本升级也是一个很大的成本。而微信小程序只在微信里运行，不用考虑浏览器的兼容性问题，框架也有自家的weui库。 3、系统权限不">
+<meta name="twitter:title" content="TypeScript篇：三种绕过多余属性检测的方式">
+<meta name="twitter:description" content="TypeScript的核心原则之一是对值所具有的结构进行类型检查。  接口（interface）可以限定我们所定义对象的结构。 就是因为这种限定，让我们所写的接口变得似乎有点不智能。为了更能让我们所定义的接口灵活自如，下面我将会以一个例子来讲述灵活地跳过类型检查器检测又能写出一个合格的接口。  123456789// 定义接口interface NameInfo &amp;#123;    firstN">
   
     <link rel="alternative" href="/atom.xml" title="Hoophony的博客" type="application/atom+xml">
   
@@ -154,34 +154,50 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-微信小程序与h5、原生app的区别" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-TypeScript篇：三种绕过多余属性检测的方式" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      微信小程序与h5、原生app的区别
+      TypeScript篇：三种绕过多余属性检测的方式
     </h1>
   
 
         
-        <a href="/2019/07/17/微信小程序与h5、原生app的区别/" class="archive-article-date">
-  	<time datetime="2019-07-17T13:09:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-17</time>
+        <a href="/2020/09/04/TypeScript篇：三种绕过多余属性检测的方式/" class="archive-article-date">
+  	<time datetime="2020-09-04T01:22:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="微信小程序与h5的区别"><a href="#微信小程序与h5的区别" class="headerlink" title="微信小程序与h5的区别"></a>微信小程序与h5的区别</h4><h5 id="1、运行环境不同"><a href="#1、运行环境不同" class="headerlink" title="1、运行环境不同"></a>1、运行环境不同</h5><p>h5 的运行环境是浏览器，包括 WebView，而微信小程序的运行并非完整的浏览器，是微信开发开发团队基于浏览器内核完全重构的一个内置解析器，针对小程序专门做了优化。</p>
-<h5 id="2、开发成本不同"><a href="#2、开发成本不同" class="headerlink" title="2、开发成本不同"></a>2、开发成本不同</h5><p>h5要考虑浏览器的兼容性问题，而且UI库的版本迭代、版本升级也是一个很大的成本。而微信小程序只在微信里运行，不用考虑浏览器的兼容性问题，框架也有自家的weui库。</p>
-<h5 id="3、系统权限不同"><a href="#3、系统权限不同" class="headerlink" title="3、系统权限不同"></a>3、系统权限不同</h5><p>微信小程序相对于h5有更多的系统权限，系统权限都可以跟微信小程序无缝对接。</p>
-<h4 id="4、运行流畅度不同"><a href="#4、运行流畅度不同" class="headerlink" title="4、运行流畅度不同"></a>4、运行流畅度不同</h4><p>当h5应用面对复杂的业务逻辑或者丰富的页面交互时，它的体验总是不尽人意，需要不断的对项目优化来提升用户体验。但是由于微信小程序运行环境独立，尽管同样用 HTML +CSS + JS 去开发，但配合微信的解析器最终渲染出来的是原生组件的效果，自然体验上将会更进一步。</p>
-<h4 id="微信小程序与原生app的区别"><a href="#微信小程序与原生app的区别" class="headerlink" title="微信小程序与原生app的区别"></a>微信小程序与原生app的区别</h4><h5 id="1、运行环境"><a href="#1、运行环境" class="headerlink" title="1、运行环境"></a>1、运行环境</h5><p>原生 App 直接运行在操作系统的单独进程中（在 Android 中还可以开启多进程），而小程序只能运行在微信的进程中。</p>
-<h5 id="2、开发成本"><a href="#2、开发成本" class="headerlink" title="2、开发成本"></a>2、开发成本</h5><p>(1)原生 App 的开发涉及到 Android/iOS 多个平台、开发工具、开发语言、不同设备的适配等问题；而小程序只需要开发一个就可以在 Android/iOS 等不同平台不同设备上运行。<br>(2)原生 App 需要在商店上架（Android 需要上架各种商店）；小程序只能在微信平台发布。</p>
-<h5 id="3、系统权限"><a href="#3、系统权限" class="headerlink" title="3、系统权限"></a>3、系统权限</h5><p>(1)原生 App 调用的是系统资源，也就是说系统提供给开发的 API 都可以使用；而小程序是基于微信的，小程序所有的功能都受限于微信，也就是说微信给开发者提供 API 才可以使用，不能绕过微信直接使用系统提供的 API。<br>(2)原生 App 可以给用户推送消息；小程序不允许主动给用户发送消息，只能回复模版消息 。<br>(3)原生 App 有独立的数据库，可以做离线存储；小程序只能存储到 LocalStorage，无法做离线存储。<br>(4)原生 App 需要下载，安装包比较大；小程序无需下载，可以通过小程序码等方式通过微信直接打开。</p>
-<h5 id="4、运行流畅度"><a href="#4、运行流畅度" class="headerlink" title="4、运行流畅度"></a>4、运行流畅度</h5><p>原生 App 运行在操作系统中，所有的原生组件可以直接调用 GPU 进行渲染；而小程序运行在微信的进程中，只能通过 WebView 进行渲染。</p>
+        <p><strong> TypeScript的核心原则之一是对值所具有的结构进行类型检查。 </strong><br><strong> 接口（interface）可以限定我们所定义对象的结构。</strong></p>
+<p>就是因为这种限定，让我们所写的接口变得似乎有点不智能。为了更能让我们所定义的接口灵活自如，下面我将会以一个例子来讲述灵活地跳过类型检查器检测又能写出一个合格的接口。</p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 定义接口</span><br><span class="line">interface NameInfo &#123;</span><br><span class="line">    firstName: string,</span><br><span class="line">    lastName: string</span><br><span class="line">&#125;</span><br><span class="line">// 定义方法</span><br><span class="line">const getUserInfo = (&#123;firstName, lastName&#125;: NameInfo):string =&gt; &#123;</span><br><span class="line">   return `$&#123;firstName&#125; $&#123;lastname&#125;`</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 调用方法</span><br><span class="line">getUserInfo(&#123;</span><br><span class="line">   firstName: &apos;yutou&apos;,</span><br><span class="line">   lastName: &apos;yu&apos;,</span><br><span class="line">   age: 18</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<hr>
+<p><code>报错：TS2345: Argument of type &#39;{ firstName: string; lastName: string; age: number; }&#39; is not assignable to parameter of type &#39;NameInfo&#39;.Object literal may only specify known properties, and &#39;age&#39; does not exist in type &#39;NameInfo&#39;</code><br>表示age属性不存在在NameInfo类型里。类型检查器检查到传入的age属性是额外的属性，所以编译失败。  </p>
+<h4 id="以下介绍三种方法可以绕过类型编译器的检测："><a href="#以下介绍三种方法可以绕过类型编译器的检测：" class="headerlink" title="以下介绍三种方法可以绕过类型编译器的检测："></a>以下介绍三种方法可以绕过类型编译器的检测：</h4><ul>
+<li><p>使用类型断言（interface不变）  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">getUserInfo(&#123;</span><br><span class="line">    firstName: &apos;yutou&apos;,</span><br><span class="line">    lastName: &apos;yu&apos;,</span><br><span class="line">    age: 18</span><br><span class="line">&#125; as NameInfo)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用索引签名（interface增加字符串索引签名）  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">interface NameInfo &#123;</span><br><span class="line">    firstName: string,</span><br><span class="line">    lastName: string, </span><br><span class="line">    `[prop: string]: any</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>类型兼容性（interface不变，调用方式改变）  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const newNameInfo = &#123;</span><br><span class="line">   firstName: &apos;yutou&apos;,</span><br><span class="line">   lastName: &apos;yu&apos;,</span><br><span class="line">   age: 18</span><br><span class="line">&#125;</span><br><span class="line">getUserInfo(newNameInfo)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong> 以上就是ts三种绕过多余属性检测的方式 </strong></p>
+<ul>
+<li>文中如有错误，欢迎在公众号（前端学习风车行）指正😊</li>
+<li>本文首发于公众号：前端学习风车行，未经许可禁止转载。并同步于该博客。</li>
+<li>更多学习有兴趣可以关注微信公众号： 前端学习风车行。</li>
+</ul>
 
       
 
@@ -266,7 +282,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/17/微信小程序与h5、原生app的区别/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/04/TypeScript篇：三种绕过多余属性检测的方式/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -280,18 +296,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/09/04/TypeScript篇：三种绕过多余属性检测的方式/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          TypeScript篇：三种绕过多余属性检测的方式
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/07/17/ES5和ES6的数组去重方法汇总/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ES5和ES6的数组去重方法汇总</div>
+    <a href="/2019/07/17/微信小程序与h5、原生app的区别/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">微信小程序与h5、原生app的区别</div>
       <i class="icon-circle-right"></i>
     </a>
   

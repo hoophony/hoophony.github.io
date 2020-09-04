@@ -155,6 +155,92 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-TypeScript篇：三种绕过多余属性检测的方式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/04/TypeScript篇：三种绕过多余属性检测的方式/">TypeScript篇：三种绕过多余属性检测的方式</a>
+    </h1>
+  
+
+        
+        <a href="/2020/09/04/TypeScript篇：三种绕过多余属性检测的方式/" class="archive-article-date">
+  	<time datetime="2020-09-04T01:22:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong> TypeScript的核心原则之一是对值所具有的结构进行类型检查。 </strong><br><strong> 接口（interface）可以限定我们所定义对象的结构。</strong></p>
+<p>就是因为这种限定，让我们所写的接口变得似乎有点不智能。为了更能让我们所定义的接口灵活自如，下面我将会以一个例子来讲述灵活地跳过类型检查器检测又能写出一个合格的接口。</p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 定义接口</span><br><span class="line">interface NameInfo &#123;</span><br><span class="line">    firstName: string,</span><br><span class="line">    lastName: string</span><br><span class="line">&#125;</span><br><span class="line">// 定义方法</span><br><span class="line">const getUserInfo = (&#123;firstName, lastName&#125;: NameInfo):string =&gt; &#123;</span><br><span class="line">   return `$&#123;firstName&#125; $&#123;lastname&#125;`</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 调用方法</span><br><span class="line">getUserInfo(&#123;</span><br><span class="line">   firstName: &apos;yutou&apos;,</span><br><span class="line">   lastName: &apos;yu&apos;,</span><br><span class="line">   age: 18</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<hr>
+<p><code>报错：TS2345: Argument of type &#39;{ firstName: string; lastName: string; age: number; }&#39; is not assignable to parameter of type &#39;NameInfo&#39;.Object literal may only specify known properties, and &#39;age&#39; does not exist in type &#39;NameInfo&#39;</code><br>表示age属性不存在在NameInfo类型里。类型检查器检查到传入的age属性是额外的属性，所以编译失败。  </p>
+<h4 id="以下介绍三种方法可以绕过类型编译器的检测："><a href="#以下介绍三种方法可以绕过类型编译器的检测：" class="headerlink" title="以下介绍三种方法可以绕过类型编译器的检测："></a>以下介绍三种方法可以绕过类型编译器的检测：</h4><ul>
+<li><p>使用类型断言（interface不变）  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">getUserInfo(&#123;</span><br><span class="line">    firstName: &apos;yutou&apos;,</span><br><span class="line">    lastName: &apos;yu&apos;,</span><br><span class="line">    age: 18</span><br><span class="line">&#125; as NameInfo)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用索引签名（interface增加字符串索引签名）  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">interface NameInfo &#123;</span><br><span class="line">    firstName: string,</span><br><span class="line">    lastName: string, </span><br><span class="line">    `[prop: string]: any</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>类型兼容性（interface不变，调用方式改变）  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const newNameInfo = &#123;</span><br><span class="line">   firstName: &apos;yutou&apos;,</span><br><span class="line">   lastName: &apos;yu&apos;,</span><br><span class="line">   age: 18</span><br><span class="line">&#125;</span><br><span class="line">getUserInfo(newNameInfo)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong> 以上就是ts三种绕过多余属性检测的方式 </strong></p>
+<ul>
+<li>文中如有错误，欢迎在公众号（前端学习风车行）指正😊</li>
+<li>本文首发于公众号：前端学习风车行，未经许可禁止转载。并同步于该博客。</li>
+<li>更多学习有兴趣可以关注微信公众号： 前端学习风车行。</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/09/04/TypeScript篇：三种绕过多余属性检测的方式/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-微信小程序与h5、原生app的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -453,7 +539,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Hoophony Yu
+    		&copy; 2020 Hoophony Yu
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
