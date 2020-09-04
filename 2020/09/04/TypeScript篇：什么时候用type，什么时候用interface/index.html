@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/3 | Hoophony的博客</title>
+  <title>TypeScript篇：什么时候用type，什么时候用interface | Hoophony的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前端小白">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hoophony的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2019/03/index.html">
+  <meta name="description" content="类型别名(type)会给一个类型起个新名字。 类型别名有时和接口很像，但是可以作用于原始值，联合类型，元组以及其它任何你需要手写的类型。  接口(interface)接口的作用就是为这些类型命名和为你的代码或第三方代码定义契约。这个怎么理解呢？就是限制我们所定义对象的属性类型。   以下来说明两者之间的不同点： type不同点： type用于原始值 1type Numtype = number">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TypeScript篇：什么时候用type，什么时候用interface">
+<meta property="og:url" content="http://yoursite.com/2020/09/04/TypeScript篇：什么时候用type，什么时候用interface/index.html">
 <meta property="og:site_name" content="Hoophony的博客">
-<meta property="og:description" content="前端小白">
+<meta property="og:description" content="类型别名(type)会给一个类型起个新名字。 类型别名有时和接口很像，但是可以作用于原始值，联合类型，元组以及其它任何你需要手写的类型。  接口(interface)接口的作用就是为这些类型命名和为你的代码或第三方代码定义契约。这个怎么理解呢？就是限制我们所定义对象的属性类型。   以下来说明两者之间的不同点： type不同点： type用于原始值 1type Numtype = number">
 <meta property="og:locale" content="UTF-8">
+<meta property="og:updated_time" content="2020-09-04T07:54:02.018Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hoophony的博客">
-<meta name="twitter:description" content="前端小白">
+<meta name="twitter:title" content="TypeScript篇：什么时候用type，什么时候用interface">
+<meta name="twitter:description" content="类型别名(type)会给一个类型起个新名字。 类型别名有时和接口很像，但是可以作用于原始值，联合类型，元组以及其它任何你需要手写的类型。  接口(interface)接口的作用就是为这些类型命名和为你的代码或第三方代码定义契约。这个怎么理解呢？就是限制我们所定义对象的属性类型。   以下来说明两者之间的不同点： type不同点： type用于原始值 1type Numtype = number">
   
     <link rel="alternative" href="/atom.xml" title="Hoophony的博客" type="application/atom+xml">
   
@@ -153,49 +154,198 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-TypeScript篇：什么时候用type，什么时候用interface" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/03/利用宝塔面板部署网站/" class="archive-article-date">
-  	<time datetime="2019-03-03T06:18:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/03/利用宝塔面板部署网站/">LNMP部署小程序后台及利用宝塔面板管理服务器</a>
+    <h1 class="article-title" itemprop="name">
+      TypeScript篇：什么时候用type，什么时候用interface
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2020/09/04/TypeScript篇：什么时候用type，什么时候用interface/" class="archive-article-date">
+  	<time datetime="2020-09-04T05:41:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong> 类型别名(type)会给一个类型起个新名字。 类型别名有时和接口很像，但是可以作用于原始值，联合类型，元组以及其它任何你需要手写的类型。</strong></p>
+<p><strong> 接口(interface)接口的作用就是为这些类型命名和为你的代码或第三方代码定义契约。这个怎么理解呢？就是限制我们所定义对象的属性类型。 </strong></p>
+<hr>
+<p>以下来说明两者之间的不同点：</p>
+<h6 id="type不同点："><a href="#type不同点：" class="headerlink" title="type不同点："></a>type不同点：</h6><ul>
+<li><p>type用于原始值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type Numtype = number</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>type用于联合类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">type TypeA = &#123; a：number &#125;</span><br><span class="line">type TypeB = &#123; b：number &#125;</span><br><span class="line">type UnionType = TypeA | TypeB</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>type用于元组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type TupleType = [number, string]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h6 id="interface不同点："><a href="#interface不同点：" class="headerlink" title="interface不同点："></a>interface不同点：</h6><p>定义个接口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">interface Interface &#123;</span><br><span class="line">   num: number</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>extends(类、接口）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class myClass extends Interface &#123;</span><br><span class="line">	str: string</span><br><span class="line">&#125;</span><br><span class="line">interface myInterface extends Interface &#123;</span><br><span class="line">	str: string</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>implements (类）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class myClass implements Interface &#123;</span><br><span class="line">	str: string</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>两者的相同点：都可以为变量设置限制类型。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">type Alias = &#123;</span><br><span class="line">  num: number</span><br><span class="line">&#125;</span><br><span class="line">interface Interface &#123;</span><br><span class="line">  num: number</span><br><span class="line">&#125;</span><br><span class="line">let _alias: Alias = &#123;</span><br><span class="line">  num: 123</span><br><span class="line">&#125;</span><br><span class="line">let _interface: Interface = &#123;</span><br><span class="line">  num: 321</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>总结：</p>
+<ul>
+<li>类型别名：无法使用接口，需要用到联合类型或者元组类型</li>
+<li>接口：当你要定义的类型用于扩展。即要使用extends、implements修饰</li>
+</ul>
+<hr>
+<ul>
+<li>文中如有错误，欢迎在公众号（前端学习风车行）指正😊</li>
+<li>本文首发于公众号：前端学习风车行，未经许可禁止转载。并同步于该博客。</li>
+<li>更多学习有兴趣可以关注微信公众号： 前端学习风车行。</li>
+</ul>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/04/TypeScript篇：什么时候用type，什么时候用interface/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/09/04/TypeScript篇：三种绕过多余属性检测的方式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">TypeScript篇：三种绕过多余属性检测的方式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -205,11 +355,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-<<<<<<< HEAD
-    		&copy; 2019 Hoophony Yu
-=======
     		&copy; 2020 Hoophony Yu
->>>>>>> 04e3056eb98342d2d70d2d57577c34acdb2e3dfa
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -222,8 +368,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
